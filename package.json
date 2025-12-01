@@ -1,0 +1,18 @@
+{
+  "name": "study-night",
+  "description": "Flash cards app",
+  "type": "module",
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "devDependencies": {
+    "chai": "...",
+    "cypress": "...",
+    "eslint": "...",
+    "gulp": "...",
+    "gulp-cli": "...",
+    "gulp-shell": "...",
+    "mocha": "...",
+    "parcel": "..."
+  }
+}

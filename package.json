@@ -1,18 +1,22 @@
 {
   "name": "study-night",
+  "version": "1.0.0",
   "description": "Flash cards app",
   "type": "module",
   "scripts": {
+    "dev": "parcel index.html",
+    "test": "gulp test",
+    "build": "parcel build index.html",
     "gulp": "gulp"
   },
   "devDependencies": {
-    "chai": "...",
-    "cypress": "...",
-    "eslint": "...",
-    "gulp": "...",
-    "gulp-cli": "...",
-    "gulp-shell": "...",
-    "mocha": "...",
-    "parcel": "..."
+    "chai": "^4.3.10",
+    "cypress": "^15.7.0",
+    "eslint": "^9.9.0",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-shell": "^0.8.0",
+    "mocha": "^10.4.0",
+    "parcel": "^2.12.0"
   }
 }

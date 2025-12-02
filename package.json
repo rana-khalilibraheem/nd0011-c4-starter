@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "parcel index.html",
+    "build": "parcel build index.html --dist-dir dist",
     "test": "gulp test",
-    "build": "parcel build index.html",
+    "cypress": "cypress run",
     "gulp": "gulp"
   },
   "devDependencies": {

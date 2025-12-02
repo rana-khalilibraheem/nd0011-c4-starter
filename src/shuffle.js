@@ -1,7 +1,8 @@
 const shuffle = (cards) => {
-  var current = cards.length;
-  var newCardsArray = [...cards];
-  while (current != 0) {
+  let current = cards.length;
+  let newCardsArray = [...cards];
+
+  while (current !== 0) {
     let randomIndex = Math.floor(Math.random() * current);
     current--;
 
@@ -10,6 +11,7 @@ const shuffle = (cards) => {
       newCardsArray[current],
     ];
   }
+
   return newCardsArray;
 };
 

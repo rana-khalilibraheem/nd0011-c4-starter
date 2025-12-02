@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudyNight</title>
+    <link rel="stylesheet" href="../styles/navigationMenu.css" />
+  </head>
+  <body>
+    <header>
+      <h1 data-cy="header">Study Night</h1>
+      <nav aria-label="Main Navigation Menu" class="primary_nav_bar">
+        <ul>
+          <li id="homePage" data-cy="nav-home">Home</li>
+          <li id="aboutPage" data-cy="nav-about">About</li>
+          <li id="cardSetPage" data-cy="nav-cardsets">Card Sets</li>
+        </ul>
+      </nav>
+    </header>
+
+    <main data-cy="main">
+      <form id="create-set-form" data-cy="create-set-form">
+        <label for="setName">Set Name:</label>
+        <input
+          type="text"
+          id="setName"
+          name="setName"
+          placeholder="Enter set name"
+        />
+        <input type="submit" value="Create Set" data-cy="create-btn" />
+        <p data-cy="error" style="display: none; color: red">
+          Set name is required
+        </p>
+      </form>
+    </main>
+
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>

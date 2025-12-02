@@ -1,19 +1,23 @@
 import { expect } from "chai";
 import { shuffle } from "../src/shuffle.js";
 
-describe("Shuffle function", () => {
-  it("should shuffle array elements", () => {
-    const arr = [1, 2, 3, 4, 5];
-    const shuffled = shuffle([...arr]);
+describe("Shuffle Function", () => {
+  it("should rearrange the elements of an array", () => {
+    const originalArray = [1, 2, 3, 4, 5];
+    const shuffledArray = shuffle(originalArray);
 
-    // تحقق أن كل العناصر موجودة بعد shuffle
-    expect(shuffled).to.have.members(arr);
+    expect(shuffledArray).to.have.lengthOf(originalArray.length);
+    expect(shuffledArray).to.have.members(originalArray);
 
-    // تحقق أن الطول لم يتغير
-    expect(shuffled).to.have.lengthOf(arr.length);
-
-    // تحقق أن الترتيب تغير غالبًا (قد يكون نفس الترتيب بالصدفة)
-    const isSameOrder = arr.every((val, index) => val === shuffled[index]);
-    expect(isSameOrder).to.be.a("boolean");
+    let isDifferent = false;
+    for (let i = 0; i < 5; i++) {
+      if (
+        JSON.stringify(shuffle(originalArray)) !== JSON.stringify(originalArray)
+      ) {
+        isDifferent = true;
+        break;
+      }
+    }
+    expect(isDifferent).to.be.true;
   });
 });

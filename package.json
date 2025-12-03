@@ -1,18 +1,19 @@
 {
-  "name": "studynight",
+  "name": "study-night",
   "version": "1.0.0",
+  "description": "Study Night project",
   "type": "module",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html",
+    "dev": "parcel src/index.html --dist-dir dist",
+    "build": "parcel build src/index.html --dist-dir dist",
+    "test": "mocha test/**/*.js",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "test": "mocha --recursive test/*.js"
+    "cypress:run": "cypress run"
   },
   "devDependencies": {
-    "parcel": "^2.10.0",
-    "cypress": "^15.7.0",
-    "mocha": "^10.2.0",
-    "chai": "^4.3.7"
+    "chai": "^4.5.0",
+    "cypress": "^15.7.1",
+    "mocha": "^10.8.2",
+    "parcel": "2.9.3"
   }
 }

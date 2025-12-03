@@ -1,25 +1,21 @@
 const { series } = require("gulp");
 const shell = require("gulp-shell");
 
-// Task to build the project using Parcel
-function parcel() {
-  return shell.task("npx parcel build index.html --dist-dir dist")();
+// build production (parcel build)
+function parcelBuild() {
+  return shell.task("npx parcel build src/index.html --dist-dir dist")();
 }
 
-// Task to run Cypress tests
-function cypress() {
+// run cypress tests (headless)
+function cypressRun() {
   return shell.task("npx cypress run")();
 }
 
-// Task to run Mocha tests
-function mocha() {
-  return shell.task("npx mocha test/**/*.js")();
+// run unit tests (mocha)
+function unitTest() {
+  return shell.task("npx mocha --recursive test")();
 }
 
-// Task to run all tests sequentially
-function test() {
-  return series(parcel, mocha, cypress)();
-}
-
-exports.default = parcel;
-exports.test = test;
+exports.default = parcelBuild;
+exports.test = series(parcelBuild, cypressRun);
+exports["test:unit"] = unitTest;
